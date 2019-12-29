@@ -81,12 +81,14 @@
             this.anoToolStripMenuItem.Name = "anoToolStripMenuItem";
             this.anoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.anoToolStripMenuItem.Text = "Ano";
+            this.anoToolStripMenuItem.Click += new System.EventHandler(this.anoToolStripMenuItem_Click);
             // 
             // lançamentoToolStripMenuItem
             // 
             this.lançamentoToolStripMenuItem.Name = "lançamentoToolStripMenuItem";
             this.lançamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lançamentoToolStripMenuItem.Text = "Lançamento";
+            this.lançamentoToolStripMenuItem.Click += new System.EventHandler(this.lançamentoToolStripMenuItem_Click);
             // 
             // lançamentosToolStripMenuItem
             // 
