@@ -30,13 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lançamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lançamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,20 @@
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
+            // anoToolStripMenuItem
+            // 
+            this.anoToolStripMenuItem.Name = "anoToolStripMenuItem";
+            this.anoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.anoToolStripMenuItem.Text = "Ano";
+            this.anoToolStripMenuItem.Click += new System.EventHandler(this.anoToolStripMenuItem_Click);
+            // 
+            // lançamentoToolStripMenuItem
+            // 
+            this.lançamentoToolStripMenuItem.Name = "lançamentoToolStripMenuItem";
+            this.lançamentoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.lançamentoToolStripMenuItem.Text = "Lançamento";
+            this.lançamentoToolStripMenuItem.Click += new System.EventHandler(this.lançamentoToolStripMenuItem_Click);
+            // 
             // relatoriosToolStripMenuItem
             // 
             this.relatoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -68,27 +82,6 @@
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
             this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatoriosToolStripMenuItem.Text = "Relatorios";
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // anoToolStripMenuItem
-            // 
-            this.anoToolStripMenuItem.Name = "anoToolStripMenuItem";
-            this.anoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.anoToolStripMenuItem.Text = "Ano";
-            this.anoToolStripMenuItem.Click += new System.EventHandler(this.anoToolStripMenuItem_Click);
-            // 
-            // lançamentoToolStripMenuItem
-            // 
-            this.lançamentoToolStripMenuItem.Name = "lançamentoToolStripMenuItem";
-            this.lançamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lançamentoToolStripMenuItem.Text = "Lançamento";
-            this.lançamentoToolStripMenuItem.Click += new System.EventHandler(this.lançamentoToolStripMenuItem_Click);
             // 
             // lançamentosToolStripMenuItem
             // 
@@ -104,12 +97,20 @@
             this.porDiaToolStripMenuItem.Name = "porDiaToolStripMenuItem";
             this.porDiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.porDiaToolStripMenuItem.Text = "Por dia";
+            this.porDiaToolStripMenuItem.Click += new System.EventHandler(this.porDiaToolStripMenuItem_Click);
             // 
             // outrosToolStripMenuItem
             // 
             this.outrosToolStripMenuItem.Name = "outrosToolStripMenuItem";
             this.outrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.outrosToolStripMenuItem.Text = "Outros";
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

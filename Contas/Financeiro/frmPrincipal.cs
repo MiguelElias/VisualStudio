@@ -27,12 +27,21 @@ namespace Financeiro
         {
             frmCadLancamento form = new frmCadLancamento();
             form.Show();
+            form.MdiParent = this;
         }
 
         private void anoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadAno form = new frmCadAno();
             form.Show();
+            form.MdiParent = this;
+        }
+
+        private void porDiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelDiario form = new frmRelDiario();
+            form.Show();
+            form.MdiParent = this;
         }
     }
 }

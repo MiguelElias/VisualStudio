@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Financeiro.Model;
-using Financeiro.Entidades ;
 
 namespace Financeiro.View
 {
-    public partial class frmCadAno : Form
+    public partial class frmRelatorio : Form
     {
-        Anos obj = new Anos();      
-        public frmCadAno()
+        public frmRelatorio()
         {
             InitializeComponent();
-            
         }
-        
+
+        private void frmRelatorio_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
