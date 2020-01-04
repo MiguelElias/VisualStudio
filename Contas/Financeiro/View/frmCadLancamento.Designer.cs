@@ -149,6 +149,7 @@
             this.rdBuscarTipo.TabStop = true;
             this.rdBuscarTipo.Text = "Buscar por tipo";
             this.rdBuscarTipo.UseVisualStyleBackColor = true;
+            this.rdBuscarTipo.CheckedChanged += new System.EventHandler(this.rdBuscarTipo_CheckedChanged);
             // 
             // rdBuscar
             // 
@@ -160,6 +161,7 @@
             this.rdBuscar.TabStop = true;
             this.rdBuscar.Text = "Buscar por data";
             this.rdBuscar.UseVisualStyleBackColor = true;
+            this.rdBuscar.CheckedChanged += new System.EventHandler(this.rdBuscar_CheckedChanged);
             // 
             // cbAno
             // 
@@ -200,6 +202,7 @@
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(121, 21);
             this.cbTipo.TabIndex = 45;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -253,6 +256,7 @@
             this.btnEditar.TabIndex = 39;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -263,6 +267,7 @@
             this.btnExcluir.TabIndex = 38;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -273,6 +278,7 @@
             this.btnSalvar.TabIndex = 37;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnNovo
             // 
@@ -282,6 +288,7 @@
             this.btnNovo.TabIndex = 36;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // dgLancamento
             // 
@@ -290,6 +297,7 @@
             this.dgLancamento.Name = "dgLancamento";
             this.dgLancamento.Size = new System.Drawing.Size(768, 177);
             this.dgLancamento.TabIndex = 35;
+            this.dgLancamento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgLancamento_CellClick);
             // 
             // txtDescricao
             // 

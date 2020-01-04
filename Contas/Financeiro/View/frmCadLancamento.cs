@@ -28,6 +28,7 @@ namespace Financeiro.View
             Listar();
             totalizar();
         }
+
         private void totalizar()
         {
             lblTotal.Text = valorTotal().ToString();
@@ -72,40 +73,6 @@ namespace Financeiro.View
             cbAno.DataSource = modelA.Listar();
             cbAno.ValueMember = "id_Ano";
             cbAno.DisplayMember = "ano";
-        }
-        private void rdBuscarTipo_CheckedChanged(object sender, EventArgs e)
-        {
-            dtBuscar.Visible = false;
-            cbBuscarTipo.Visible = true;
-        }
-        private void rdBuscarData_CheckedChanged(object sender, EventArgs e)
-        {
-            dtBuscar.Value = DateTime.Now;
-            dtBuscar.Visible = true;
-            dtBuscar.Enabled = true;
-            cbBuscarTipo.Visible = false;
-        }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            HabilitarCampos();
-            btnSalvar.Enabled = true;
-            LimparCampos();
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            if (txtValor.Text == "")
-            {
-                MessageBox.Show("Insira um valor !!");
-                return;
-            }
-            salvar();
-            LimparCampos();
-            btnSalvar.Enabled = false;
-            Listar();
-            totalizar();
-
         }
         private void Listar()
         {
@@ -158,19 +125,7 @@ namespace Financeiro.View
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (txtValor.Text == "")
-            {
-                MessageBox.Show("Insira um valor !!");
-                return;
-            }
-            editar();
-            LimparCampos();
-            btnSalvar.Enabled = false;
-            Listar();
-            totalizar();
-        }
+        
         private void editar()
         {
             try
@@ -201,38 +156,7 @@ namespace Financeiro.View
                 MessageBox.Show("Item não editado " + ex);
             }
         }
-        private void dg_CellClik(object sender, DataGridViewCellEventArgs e)
-        {
-            HabilitarCampos();
-            txtId.Text = dgLancamento.CurrentRow.Cells[0].Value.ToString();
-            cbTipo.Text = dgLancamento.CurrentRow.Cells[1].Value.ToString();
-            txtDescricao.Text = dgLancamento.CurrentRow.Cells[2].Value.ToString();
-            txtValor.Text = dgLancamento.CurrentRow.Cells[3].Value.ToString();
-            cbMes.Text = dgLancamento.CurrentRow.Cells[4].Value.ToString();
-            cbAno.Text = dgLancamento.CurrentRow.Cells[5].Value.ToString();
-            dgLancamento.Text = dgLancamento.CurrentRow.Cells[6].Value.ToString();
-
-
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            if (txtId.Text == "")
-            {
-                MessageBox.Show("Selecione um registro para excluir");
-                return;
-            }
-            else
-            {
-                excluir();
-                DesabilitarCampos();
-                LimparCampos();
-                Listar();
-                totalizar();
-
-            }
-
-        }
+       
         private void excluir()
         {
             try
@@ -255,26 +179,6 @@ namespace Financeiro.View
             }
 
         }
-
-        private void cbBuscarTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            obj.Tipo = cbBuscarTipo.Text;
-            List<Lancamento> lista = new List<Lancamento>();
-            lista = new LancModel().BuscarTipo(obj);
-            dgLancamento.AutoGenerateColumns = false;
-            dgLancamento.DataSource = lista;
-            totalizar();
-        }
-
-        private void dtBuscar_ValueChanged(object sender, EventArgs e)
-        {
-            obj.Data = Convert.ToDateTime(dtBuscar.Text);
-            List<Lancamento> lista = new List<Lancamento>();
-            lista = new LancModel().BuscarTipo(obj);
-            dgLancamento.AutoGenerateColumns = false;
-            dgLancamento.DataSource = lista;
-            totalizar();
-        }
         private decimal valorTotal()
         {
             decimal totalEntrada = 0;
@@ -292,6 +196,105 @@ namespace Financeiro.View
                 }
             }
             return totalEntrada - totalSaida;
+        }
+
+        private void rdBuscarTipo_CheckedChanged(object sender, EventArgs e)
+        {
+            dtBuscar.Visible = false;
+            cbBuscarTipo.Visible = true;
+        }
+
+        private void rdBuscar_CheckedChanged(object sender, EventArgs e)
+        {
+            dtBuscar.Value = DateTime.Now;
+            dtBuscar.Visible = true;
+            dtBuscar.Enabled = true;
+            dtBuscar.Visible = false;
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            HabilitarCampos();
+            btnSalvar.Enabled = true;
+            LimparCampos();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (txtValor.Text == "")
+            {
+                MessageBox.Show("Insira um valor !!");
+                return;
+            }
+            salvar();
+            LimparCampos();
+            btnSalvar.Enabled = false;
+            Listar();
+            totalizar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (txtValor.Text == "")
+            {
+                MessageBox.Show("Insira um valor !!");
+                return;
+            }
+            editar();
+            LimparCampos();
+            btnSalvar.Enabled = false;
+            Listar();
+            totalizar();
+        }
+
+        private void dgLancamento_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HabilitarCampos();
+            txtId.Text = dgLancamento.CurrentRow.Cells[0].Value.ToString();
+            cbTipo.Text = dgLancamento.CurrentRow.Cells[1].Value.ToString();
+            txtDescricao.Text = dgLancamento.CurrentRow.Cells[2].Value.ToString();
+            txtValor.Text = dgLancamento.CurrentRow.Cells[3].Value.ToString();
+            cbMes.Text = dgLancamento.CurrentRow.Cells[4].Value.ToString();
+            cbAno.Text = dgLancamento.CurrentRow.Cells[5].Value.ToString();
+            dgLancamento.Text = dgLancamento.CurrentRow.Cells[6].Value.ToString();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Selecione um registro para excluir");
+                return;
+            }
+            else
+            {
+                excluir();
+                DesabilitarCampos();
+                LimparCampos();
+                Listar();
+                totalizar();
+
+            }
+        }
+
+        private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            obj.Tipo = cbBuscarTipo.Text;
+            List<Lancamento> lista = new List<Lancamento>();
+            lista = new LancModel().BuscarTipo(obj);
+            dgLancamento.AutoGenerateColumns = false;
+            dgLancamento.DataSource = lista;
+            totalizar();
+        }
+
+        private void dtBuscar_ValueChanged(object sender, EventArgs e)
+        {
+            obj.Data = Convert.ToDateTime(dtBuscar.Text);
+            List<Lancamento> lista = new List<Lancamento>();
+            lista = new LancModel().BuscarTipo(obj);
+            dgLancamento.AutoGenerateColumns = false;
+            dgLancamento.DataSource = lista;
+            totalizar();
         }
     }
 }

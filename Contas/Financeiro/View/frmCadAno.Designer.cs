@@ -64,6 +64,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(242, 20);
             this.txtBuscar.TabIndex = 19;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label70
             // 
@@ -83,6 +84,7 @@
             this.btnEditar.TabIndex = 17;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -93,6 +95,7 @@
             this.btnExcluir.TabIndex = 16;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -103,6 +106,7 @@
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnNovo
             // 
@@ -112,6 +116,7 @@
             this.btnNovo.TabIndex = 14;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // dgAno
             // 
@@ -120,6 +125,7 @@
             this.dgAno.Name = "dgAno";
             this.dgAno.Size = new System.Drawing.Size(776, 235);
             this.dgAno.TabIndex = 13;
+            this.dgAno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAno_CellClick);
             // 
             // txtAno
             // 
